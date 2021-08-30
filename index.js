@@ -14,7 +14,7 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+const organizeMoonsByPlanet = ([{name, planet}]) => {
   const result = {};
   for (let moon of moons) {
     const name = moon.name;
@@ -27,6 +27,8 @@ function organizeMoonsByPlanet(moons) {
   }
   return result;
 }
+
+console.log(organizeMoonsByPlanet(moons));
 
 /*
   To update this function, you should:
