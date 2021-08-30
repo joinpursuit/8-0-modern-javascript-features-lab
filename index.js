@@ -46,11 +46,10 @@ const getClosestToPlanet = (moons = []) => {
       closest = moon;
     }
   }
-
   return closest.name;
 }
 
-console.log(getClosestToPlanet(moons))
+// console.log(getClosestToPlanet(moons))
 
 /*
   To update this function, you should:
@@ -60,19 +59,21 @@ console.log(getClosestToPlanet(moons))
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
 
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
+  // distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
   return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+    name,
+    planet,
+    distanceFromPlanetInKm,
   };
 }
+
+// console.log(createMoon("Europa", "Jupiter"));
 
 module.exports = {
   organizeMoonsByPlanet,
