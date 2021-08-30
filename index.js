@@ -14,11 +14,15 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+// instruction #1
+const organizeMoonsByPlanet = (moons) => {
   const result = {};
+  
+  
   for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
+    // instruction #2
+    const {name, planet} = moon;
+
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -27,17 +31,23 @@ function organizeMoonsByPlanet(moons) {
   }
   return result;
 }
-
+organizeMoonsByPlanet(moons);
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
-  - Use object destructuring and the rest operator to assign the `closest` and `rest` variables.
+  - Use ARRAY destructuring and the rest operator to assign the `closest` and `rest` variables.
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
-  let closest = moons[0];
-  const rest = moons.slice(1);
+const getClosestToPlanet = (moons) => {
+  // uses array destructuring, grabs array elements by order, strict naming doesn't matter
+  // 'closest' becomes the 1st element from 'moons', 0th index, 1 single object
+  // rest operator gathers the rest (after the 1st element) of the 'moons' elements into an array called 'rest'
+  // thus, we can iterate through 'rest' on line 52
+  // use 'let' because variable 'closest' will have to get reassigned, //> line 50
+  // line 50, is creating a variable 'closest' value being the 1st element from 'moons' array
+  // also, creating an array 'rest' with elements following the 1st element from 'moons' 
+  let [closest, ...rest] = moons;
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
@@ -56,17 +66,17 @@ function getClosestToPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
 
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
+  // distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
   return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+    name,
+    planet,
+    distanceFromPlanetInKm
   };
 }
 
