@@ -35,11 +35,8 @@ const  organizeMoonsByPlanet = (moons) =>{
 */
 const getClosestToPlanet = (moons) =>{
   let [closest, ...rest] = moons;
-  let distance = closest.distanceFromPlanetInKm
   for (let moon of rest) {
-    let {distanceFromPlanetInKm} = moon
-    if (distanceFromPlanetInKm < distance) {
-      distance = distanceFromPlanetInKm
+    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
       closest = moon;
     }
   }
