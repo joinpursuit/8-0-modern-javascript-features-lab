@@ -14,11 +14,11 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-const organizeMoonsByPlanet = ([{name, planet}]) => {
+const organizeMoonsByPlanet = (moons = []) => {
   const result = {};
   for (let moon of moons) {
-    const { name } = moon;
-    const { planet } = moon;
+    const { name, planet } = moon;
+    // const { planet } = moon;
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -28,7 +28,7 @@ const organizeMoonsByPlanet = ([{name, planet}]) => {
   return result;
 }
 
-// console.log(organizeMoonsByPlanet(moons));
+console.log(organizeMoonsByPlanet());
 
 /*
   To update this function, you should:
