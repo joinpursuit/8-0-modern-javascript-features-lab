@@ -14,11 +14,9 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+const  organizeMoonsByPlanet = (moons) =>{
   const result = {};
-  for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
+  for (let {name, planet} of moons) {
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -35,12 +33,13 @@ function organizeMoonsByPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
-  let closest = moons[0];
-  const rest = moons.slice(1);
-
+const getClosestToPlanet = (moons) =>{
+  let [closest, ...rest] = moons;
+  let distance = closest.distanceFromPlanetInKm
   for (let moon of rest) {
-    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
+    let {distanceFromPlanetInKm} = moon
+    if (distanceFromPlanetInKm < distance) {
+      distance = distanceFromPlanetInKm
       closest = moon;
     }
   }
@@ -56,17 +55,15 @@ function getClosestToPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") =>{
   if (!name || !planet) {
     return "Name and planet are required.";
   }
-
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
-
+console.log(distanceFromPlanetInKm)
   return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+    name,
+    planet,
+    distanceFromPlanetInKm
   };
 }
 
