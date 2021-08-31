@@ -40,10 +40,9 @@ const organizeMoonsByPlanet = (moons) => {
 
 
 const getClosestToPlanet = (moons) => {
-  let closest = moons[0];
-  const rest = moons.slice(1);
 
-  for (let moon of rest) {
+let [closest, ...rest] = moons;
+for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
       closest = moon;
     }
@@ -62,7 +61,7 @@ const getClosestToPlanet = (moons) => {
 */
 
 
-const createMoon = (name, planet, distanceFromPlanetInKm) => {
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
@@ -70,9 +69,9 @@ const createMoon = (name, planet, distanceFromPlanetInKm) => {
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
   return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+    name,
+    planet,
+    distanceFromPlanetInKm
   };
 }
 
