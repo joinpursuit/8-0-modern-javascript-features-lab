@@ -15,16 +15,16 @@ const moons = [
   You should not need to make any other changes to the code.
 */
 //const ["Luna", "Deimos", "Phobos", "ganymede", "Io", "Europa"] = moon
-let [first, second] = moons;
-let {name, planet} = first;
+// let [first, second] = moons;
+// let {name, planet} = first;
 //const name = "Luna";
 //const planet = "Earth";
 
-function organizeMoonsByPlanet({name}, {planet})  {
+const organizeMoonsByPlanet (moons) => {
   const result = {};
-  for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
+  for (const {name: n, planet: p} of moons) {
+    // const name = moon.name;
+    // const planet = moon.planet;
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -34,6 +34,10 @@ function organizeMoonsByPlanet({name}, {planet})  {
   return result;
 }
 
+const [ { name, planet }] = moons;
+
+//console.log(planet);
+
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
@@ -41,7 +45,7 @@ function organizeMoonsByPlanet({name}, {planet})  {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
+const getClosestToPlanet(moons) => {
   let closest = moons[0];
   const rest = moons.slice(1);
 
@@ -54,6 +58,8 @@ function getClosestToPlanet(moons) {
   return closest.name;
 }
 
+let [ closest, ...rest] = moons;
+
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
@@ -62,7 +68,7 @@ function getClosestToPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
+const createMoon(name, planet, distanceFromPlanetInKm = unknown) => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
@@ -75,6 +81,8 @@ function createMoon(name, planet, distanceFromPlanetInKm) {
     distanceFromPlanetInKm: distanceFromPlanetInKm,
   };
 }
+
+
 
 module.exports = {
   organizeMoonsByPlanet,
