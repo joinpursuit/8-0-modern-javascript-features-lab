@@ -14,19 +14,18 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+organizeMoonsByPlanet = (moons) 
   const result = {};
   for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
+    const = [name, planet]; 
     if (result[planet]) {
       result[planet].push(name);
     } else {
       result[planet] = [name];
     }
   }
-  return result;
-}
+  => result;
+
 
 /*
   To update this function, you should:
@@ -35,7 +34,7 @@ function organizeMoonsByPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
+getClosestToPlanet = (moons) 
   let closest = moons[0];
   const rest = moons.slice(1);
 
@@ -45,8 +44,8 @@ function getClosestToPlanet(moons) {
     }
   }
 
-  return closest.name;
-}
+  => closest.name;
+
 
 /*
   To update this function, you should:
@@ -56,19 +55,18 @@ function getClosestToPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
+createMoon = (name, planet, distanceFromPlanetInKm)
   if (!name || !planet) {
-    return "Name and planet are required.";
+    => "Name and planet are required.";
   }
 
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
-  return {
+  => 
     name: name,
     planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
-  };
-}
+    distanceFromPlanetInKm: distanceFromPlanetInKm
+
 
 module.exports = {
   organizeMoonsByPlanet,
