@@ -20,11 +20,15 @@ const moons = [
 //const name = "Luna";
 //const planet = "Earth";
 
-const organizeMoonsByPlanet (moons) => {
+
+// don't forget the = sign before the parameter
+const organizeMoonsByPlanet = (moons) => {
+  //const { name, planet } = moons;
+  
   const result = {};
-  for (const {name: n, planet: p} of moons) {
-    // const name = moon.name;
-    // const planet = moon.planet;
+  for (const { name, planet } of moons) {
+    // const name = moons.name;
+    // const planet = moons.planet;
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -34,7 +38,7 @@ const organizeMoonsByPlanet (moons) => {
   return result;
 }
 
-const [ { name, planet }] = moons;
+//organizeMoonsByPlanet(moons);
 
 //console.log(planet);
 
@@ -45,9 +49,10 @@ const [ { name, planet }] = moons;
 
   You should not need to make any other changes to the code.
 */
-const getClosestToPlanet(moons) => {
-  let closest = moons[0];
-  const rest = moons.slice(1);
+const getClosestToPlanet = (moons) => {
+  let [ closest, ...rest] = moons;
+  //let closest = moons[0];
+  //const rest = moons.slice(1);
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
@@ -58,7 +63,7 @@ const getClosestToPlanet(moons) => {
   return closest.name;
 }
 
-let [ closest, ...rest] = moons;
+
 
 /*
   To update this function, you should:
@@ -68,7 +73,7 @@ let [ closest, ...rest] = moons;
 
   You should not need to make any other changes to the code.
 */
-const createMoon(name, planet, distanceFromPlanetInKm = unknown) => {
+const createMoon = (name, planet, distanceFromPlanetInKm = "unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
@@ -76,13 +81,13 @@ const createMoon(name, planet, distanceFromPlanetInKm = unknown) => {
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
   return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+    name,
+    planet,
+    distanceFromPlanetInKm,
   };
 }
-
-
+// no need to declare variable because parameters already exist and can be used as variables or placeholders.
+// don't forget the quotes on the default parameter.
 
 module.exports = {
   organizeMoonsByPlanet,
