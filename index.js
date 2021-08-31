@@ -45,7 +45,9 @@ const getClosestToPlanet = (moons) => {
 
   return closest.name;
 }
-// testing github
+
+//testing github and iTerm
+
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
