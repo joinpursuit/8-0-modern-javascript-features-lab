@@ -14,7 +14,13 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+//const ["Luna", "Deimos", "Phobos", "ganymede", "Io", "Europa"] = moon
+let [first, second] = moons;
+let {name, planet} = first;
+//const name = "Luna";
+//const planet = "Earth";
+
+function organizeMoonsByPlanet({name}, {planet})  {
   const result = {};
   for (let moon of moons) {
     const name = moon.name;
