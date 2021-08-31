@@ -15,21 +15,20 @@ const moons = [
   You should not need to make any other changes to the code.
 */
 const organizeMoonsByPlanet = (moons) => {
-  // const result = {};
-  for (let moon of moons) {
-    // const name = moon.name;
-    // const planet = moon.planet;
+      const result = {};
+      for (let moon of moons) {
 
-    const { name, planet } = moon
-
-    if (moon[planet]) {
-      moon[planet].push(name);
+      const { name } = moon
+      const { planet } = moon
+    
+    if (result[planet]) {
+      result[planet].push(name);
     } else {
-      moon[planet] = [name];
+      result[planet] = [name];
     }
   }
-  return moon;
-}
+  return result;
+  }
 
 /*
   To update this function, you should:
@@ -39,18 +38,18 @@ const organizeMoonsByPlanet = (moons) => {
   You should not need to make any other changes to the code.
 */
 const getClosestToPlanet = (moons) => {
-  // // let closest = moons[0];
-  // // const rest = moons.slice(1);
+  // let closest = moons[0];
+  // const rest = moons.slice(1);
 
-  // let [closest, ...rest]
+  let [closest, ...rest] = moons
 
-  // for (let moon of rest) {
-  //   if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
-  //     closest = moon;
-  //   }
-  // }
+  for (let moon of rest) {
+    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
+      closest = moon;
+    }
+  }
 
-  // return closest.name;
+  return closest.name;
 }
 
 /*
@@ -71,7 +70,8 @@ const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
     planet,
     distanceFromPlanetInKm
   };
-}
+  }
+
 
 module.exports = {
   organizeMoonsByPlanet,
