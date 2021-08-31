@@ -14,18 +14,32 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-organizeMoonsByPlanet = (moons) 
+const organizeMoonsByPlanet = (moons) =>
+{
   const result = {};
   for (let moon of moons) {
-    const = [name, planet]; 
+    const { name, planet } = moon; 
     if (result[planet]) {
       result[planet].push(name);
     } else {
       result[planet] = [name];
-    }
+      }
   }
-  => result;
-
+  return result;
+};
+// function organizeMoonsByPlanet(moons) {
+//   const result = {};
+//   for (let moon of moons) {
+//     const name = moon.name;
+//     const planet = moon.planet;
+//     if (result[planet]) {
+//       result[planet].push(name);
+//     } else {
+//       result[planet] = [name];
+//     }
+//   }
+//   return result;
+// }
 
 /*
   To update this function, you should:
@@ -34,18 +48,26 @@ organizeMoonsByPlanet = (moons)
 
   You should not need to make any other changes to the code.
 */
-getClosestToPlanet = (moons) 
-  let closest = moons[0];
-  const rest = moons.slice(1);
-
-  for (let moon of rest) {
-    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
-      closest = moon;
+const getClosestToPlanet = (moons) => {
+  let [closest, ...rest] = moons;
+    for (let moon of rest) {
+      if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
+        closest = moon;
+      }
     }
-  }
+    return closest.name;
+}
+//   let closest = moons[0];
+//   const rest = moons.slice(1);
 
-  => closest.name;
+//   for (let moon of rest) {
+//     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
+//       closest = moon;
+//     }
+//   }
 
+//   return closest.name;
+// }
 
 /*
   To update this function, you should:
@@ -55,18 +77,31 @@ getClosestToPlanet = (moons)
 
   You should not need to make any other changes to the code.
 */
-createMoon = (name, planet, distanceFromPlanetInKm)
+
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
-    => "Name and planet are required.";
-  }
+    return "Name and planet are required.";
+    }
+  distanceFromPlanetInKm = distanceFromPlanetInKm;
+    return {
+      name,
+      planet,
+      distanceFromPlanetInKm,
+    };
+  };
+// function createMoon(name, planet, distanceFromPlanetInKm) {
+//   if (!name || !planet) {
+//     return "Name and planet are required.";
+//   }
 
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
+//   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
-  => 
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm
-
+//   return {
+//     name: name,
+//     planet: planet,
+//     distanceFromPlanetInKm: distanceFromPlanetInKm,
+//   };
+// }
 
 module.exports = {
   organizeMoonsByPlanet,
