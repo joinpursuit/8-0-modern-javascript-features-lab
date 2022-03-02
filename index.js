@@ -30,15 +30,15 @@ const moons = [
 const organizeMoonsByPlanet = (moons) => {
   const result = {};
   for (let moon of moons) {
-const {name, planet} = moon;
-if (result[planet]) {
-        result[planet].push(name);
-      } else {
-        result[planet] = [name];
-      }
+    const { name, planet } = moon;
+    if (result[planet]) {
+      result[planet].push(name);
+    } else {
+      result[planet] = [name];
     }
-    return result;
-}
+  }
+  return result;
+};
 
 /*
   To update this function, you should:
