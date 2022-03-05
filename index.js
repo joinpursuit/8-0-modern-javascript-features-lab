@@ -17,8 +17,8 @@ const moons = [
 
 const organizeMoonsByPlanet = (moons) => {
   const result = {};
-  for (let moon of moons) {
-    const { name, planet } = moon;
+  for (let { name, planet } of moons) {
+    //const { name, planet } = moon;
     //console.log(planet);
     if (result[planet]) {
       result[planet].push(name);
@@ -54,8 +54,8 @@ const organizeMoonsByPlanet = (moons) => {
   You should not need to make any other changes to the code.
 */
 
-const getClosestToPlanet = (moons) => {
-  let [closest, ...rest] = moons;
+const getClosestToPlanet = ([closest, ...rest]) => {
+  //let [closest, ...rest] = moons;
   //console.log(rest)
 
   for (let moon of rest) {
