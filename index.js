@@ -17,15 +17,15 @@ const moons = [
 
 const organizeMoonsByPlanet = moons => {
   let result = {};
-  for(let moon of moons){
-  const {name, planet} = moon;
-  if (result[planet]) {
-    result[planet].push(name);
-  } else {
-    result[planet] = [name];
+  for (let moon of moons) {
+    const { name, planet } = moon;
+    if (result[planet]) {
+      result[planet].push(name);
+    } else {
+      result[planet] = [name];
+    }
   }
-}
-return result;
+  return result;
 }
 
 // function organizeMoonsByPlanet(moons) {
@@ -52,13 +52,11 @@ return result;
 */
 
 const getClosestToPlanet = moons => {
-  let closest = moons[0];
-  const {name, planet, distanceFromPlanetInKm} = closest
   
-  const [first, ...rest] = moons
+  let [closest, ...rest] = moons;
 
   for (let moon of rest) {
-    if (moon.distanceFromPlanetInKm < distanceFromPlanetInKm) {
+    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
       closest = moon;
     }
   }
