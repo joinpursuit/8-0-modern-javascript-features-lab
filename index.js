@@ -35,9 +35,9 @@ const organizeMoonsByPlanet = moons => {
   You should not need to make any other changes to the code.
 */
 const getClosestToPlanet= moons => {
-  let [{name, planet, distanceFromPlanetInKm}, ...rest] = moons
+  let [closest, ...rest] = moons
 
-  let closest = moons[0];
+  // let closest = moons[0];
 
   // const rest = moons.slice(1);
 
