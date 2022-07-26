@@ -62,8 +62,8 @@ let createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
-  //!remove the assignment distanceFromPlanetInKm || "Unknown";
-  distanceFromPlanetInKm;
+ 
+  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";;
   
 return {
     name,
