@@ -37,9 +37,9 @@ const result = {};
 */
 const getClosestToPlanet = moons => {
   //!moons is an array of obj
-  const [{name},...rest] = moons
-
-  let closest = moons[0];
+  let [closest, ...rest] = moons
+  
+  //let closest = moons[0];
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
