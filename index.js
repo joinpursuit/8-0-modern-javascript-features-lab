@@ -37,7 +37,7 @@ const organizeMoonsByPlanet = moons => {
 */
 const getClosestToPlanet = moons => {
   let [closest, ...rest] = moons;
-  //changing the previous variables to a deconstructed version
+  //changing the previous variables to a deconstructed 
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
@@ -46,7 +46,7 @@ const getClosestToPlanet = moons => {
   }
 
   return closest.name;
-}
+} 
 
 /*
   To update this function, you should:
@@ -57,16 +57,14 @@ const getClosestToPlanet = moons => {
   You should not need to make any other changes to the code.
 */
 const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
-  //I had to keep param for it to work. I'm not exactly sure why. Ask later.
   if (!name || !planet) {
     return "Name and planet are required.";
   }
 
   return {
-    name,
-    planet,
-    distanceFromPlanetInKm,
-    //creating an object short hand
+     name,
+     planet,
+     distanceFromPlanetInKm,
   };
 }
 
