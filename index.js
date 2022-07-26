@@ -36,18 +36,19 @@ const result = {};
   You should not need to make any other changes to the code.
 */
 const getClosestToPlanet = moons => {
+  //!moons is an array of obj
+  const [{name},...rest] = moons
+
   let closest = moons[0];
-  const rest = moons.slice(1);  
 
   for (let moon of rest) {
-  const {closest, rest, ...args}= moon
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
       closest = moon;
     }
   }
-
   return closest.name;
 }
+
 
 /*
   To update this function, you should:
@@ -61,16 +62,15 @@ let createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
-  //remove the assignment distanceFromPlanetInKm || "Unknown";
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
+  //!remove the assignment distanceFromPlanetInKm || "Unknown";
+  distanceFromPlanetInKm;
   
-
-  return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
-  };
+return {
+    name,
+    planet,
+    distanceFromPlanetInKm
 }
+};
 
 module.exports = {
   organizeMoonsByPlanet,
