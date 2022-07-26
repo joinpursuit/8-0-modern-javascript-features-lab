@@ -14,11 +14,10 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+const organizeMoonsByPlanet = (moons) => {
   const result = {};
   for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
+    const { name, planet } = moon
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -27,7 +26,6 @@ function organizeMoonsByPlanet(moons) {
   }
   return result;
 }
-
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
@@ -35,7 +33,7 @@ function organizeMoonsByPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
+const getClosestToPlanet = (moons) => {
   let closest = moons[0];
   const rest = moons.slice(1);
 
@@ -56,7 +54,7 @@ function getClosestToPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
+createMoon (name, planet, distanceFromPlanetInKm) {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
