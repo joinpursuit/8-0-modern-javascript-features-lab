@@ -15,10 +15,10 @@ const moons = [
   You should not need to make any other changes to the code.
 */
 const organizeMoonsByPlanet = moons => {
-
+//To update func in arrow syntax remove func and param marker and refactor like above. Instead of func/parma it is now constant func equals moons func expression. 
   const result = {};
   for (let moon of moons) {
-    const {name, planet} = moon;
+    const {name, planet} = moon; 
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -35,9 +35,9 @@ const organizeMoonsByPlanet = moons => {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
-  let closest = moons[0];
-  const rest = moons.slice(1);
+const getClosestToPlanet = moons => {
+  let [closest, ...rest] = moons;
+  //changing the previous variables to a deconstructed version
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
