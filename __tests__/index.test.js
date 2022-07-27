@@ -81,7 +81,7 @@ describe("getClosestToPlanet()", () => {
   });
 });
 
-describe("createMoon()", () => {
+describe.only("createMoon()", () => {
   test("should return a new moon object based off of the inputs", () => {
     const actual = createMoon("Umbriel", "Uranus", 265970);
     const expected = {
