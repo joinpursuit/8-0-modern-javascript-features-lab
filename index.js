@@ -55,7 +55,6 @@ const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
   return {
     name,
     planet,
