@@ -62,11 +62,10 @@ createMoon = (name, planet, distanceFromPlanetInKm = `Unknown`) => {
   }
 
   if (distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown");
-
   { return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+    name,
+    planet,
+    distanceFromPlanetInKm,
     };
   }
 }
