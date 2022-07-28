@@ -50,7 +50,7 @@ describe("organizeMoonsByPlanet()", () => {
   });
 });
 
-describe("getClosestToPlanet()", () => {
+describe.only("getClosestToPlanet()", () => {
   test("should return the moon closest to its planet", () => {
     const actual = getClosestToPlanet(moons);
     const expected = "Phobos";
