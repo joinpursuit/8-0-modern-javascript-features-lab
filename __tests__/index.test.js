@@ -21,7 +21,7 @@ describe("organizeMoonsByPlanet()", () => {
       Mars: ["Deimos", "Phobos"],
       Jupiter: ["Ganymede", "Io", "Europa"],
     };
-    expect(actual).toEqual(expected);
+    expected(actual).toEqual(expected);
   });
 
   test("should not use the `function` keyword", () => {

@@ -14,7 +14,23 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
+
 function organizeMoonsByPlanet(moons) {
+  const organizeMoonsByPlanet = moons => {
+    const result = {};
+    for (let moon of moons) {
+      const name = moon.name;
+      const planet = moon.planet;
+      const {name, planet} = moon;
+      if (result[planet]) {
+        result[planet].push(name);
+      } else {
+      }
+      }
+      return result;
+      }
+    }
+  
   const result = {};
   for (let moon of moons) {
     const name = moon.name;
@@ -28,6 +44,7 @@ function organizeMoonsByPlanet(moons) {
   return result;
 }
 
+
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
@@ -38,16 +55,16 @@ function organizeMoonsByPlanet(moons) {
 function getClosestToPlanet(moons) {
   let closest = moons[0];
   const rest = moons.slice(1);
+const getClosestToPlanet = (moons) => {
+
+  let [closest, ...rest] = moons;
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
-      closest = moon;
     }
   }
-
-  return closest.name;
 }
-
+}
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
@@ -57,18 +74,11 @@ function getClosestToPlanet(moons) {
   You should not need to make any other changes to the code.
 */
 function createMoon(name, planet, distanceFromPlanetInKm) {
-  if (!name || !planet) {
-    return "Name and planet are required.";
-  }
-
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
-
-  return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
-  };
-}
+  const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
+    if (!name || !planet) {
+      return "Name and planet are required.";
+    }
+  
 
 module.exports = {
   organizeMoonsByPlanet,
