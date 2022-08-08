@@ -6,7 +6,7 @@ const moons = [
   { name: "Io", planet: "Jupiter", distanceFromPlanetInKm: 421600 },
   { name: "Europa", planet: "Jupiter", distanceFromPlanetInKm: 670900 },
 ];
-
+//complete 
 /*
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
