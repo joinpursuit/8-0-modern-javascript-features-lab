@@ -17,7 +17,8 @@ const moons = [
 const organizeMoonsByPlanet = (moons) => {
   const result = {};
   for (let moon of moons) {
-    const {name, planet } = moon;
+    //variable restructuring the moon objects
+    const {name, planet} = moon;
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -35,6 +36,7 @@ const organizeMoonsByPlanet = (moons) => {
   You should not need to make any other changes to the code.
 */
 const getClosestToPlanet = (moons) => {
+  //assigning closest to the first moon object and ...rest to the rest of moons using variable restructuring
   let [closest, ...rest] = moons;
 
   for (let moon of rest) {
@@ -61,6 +63,7 @@ const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
 
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
+  //return the shorthand version of a moon object
   return {
     name,
     planet,
