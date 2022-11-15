@@ -61,19 +61,11 @@ const getClosestToPlanet = (moons) => {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
-  if (!name || !planet) {
-    return "Name and planet are required.";
-  }
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
 
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
+  return (!name || !planet) ? "Name and planet are required." : { name, planet, distanceFromPlanetInKm, };
 
-  return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
-  };
-}
+} // ends createMoon()
 
 module.exports = {
   organizeMoonsByPlanet,
