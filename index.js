@@ -7,26 +7,31 @@ const moons = [
   { name: "Europa", planet: "Jupiter", distanceFromPlanetInKm: 670900 },
 ];
 
-/*
+/*``
   To update this function, you should:
   - Change the function to use arrow syntax, while keeping the name of the function the same.
   - Use object destructuring to assign the `name` and `planet` variables.
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+const organizeMoonsByPlanet = ( moons ) => {
+  
   const result = {};
-  for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
-    if (result[planet]) {
-      result[planet].push(name);
-    } else {
-      result[planet] = [name];
-    }
+
+  for( let moon of moons ){
+
+    const { name, planet } = moon;
+
+    if( result[planet] )
+      result[planet].push(name)
+    else
+      result[planet] = [name]
+
   }
+
   return result;
-}
+
+} // ends organizeMoonsByPlanet()
 
 /*
   To update this function, you should:
@@ -35,18 +40,18 @@ function organizeMoonsByPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
-  let closest = moons[0];
-  const rest = moons.slice(1);
+const getClosestToPlanet = (moons) => {
+
+  let [closest, ...rest] = moons;
 
   for (let moon of rest) {
-    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
+    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm)
       closest = moon;
-    }
   }
 
   return closest.name;
-}
+
+} // ends getClosestToPlanet()
 
 /*
   To update this function, you should:
@@ -56,19 +61,11 @@ function getClosestToPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
-  if (!name || !planet) {
-    return "Name and planet are required.";
-  }
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
 
-  distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
+  return (!name || !planet) ? "Name and planet are required." : { name, planet, distanceFromPlanetInKm, };
 
-  return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
-  };
-}
+} // ends createMoon()
 
 module.exports = {
   organizeMoonsByPlanet,
