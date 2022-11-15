@@ -14,10 +14,10 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-const organizeMoonsByPlanet = (moons) => {
+const organizeMoonsByPlanet = (moons) => { // using arrow
   const result = {};
   for (let moon of moons) {
-    const{name, planet} = moon
+    const{name, planet} = moon        // object destructuring
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -34,8 +34,8 @@ const organizeMoonsByPlanet = (moons) => {
 
   You should not need to make any other changes to the code.
 */
-const getClosestToPlanet = (moons) => {
-let [closest , ...rest] = moons
+const getClosestToPlanet = (moons) => {   // arrow 
+let [closest , ...rest] = moons           // array destructuring and using rest operator to access all the moons other than closest
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
       closest = moon;
@@ -52,14 +52,14 @@ let [closest , ...rest] = moons
 
   You should not need to make any other changes to the code.
 */
-const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {  // arrow and using default parameter
   if (!name || !planet) {
     return "Name and planet are required.";
   }
 
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
-  return {
+  return {        // using object shorthand to create new object
     name,
     planet,
     distanceFromPlanetInKm
