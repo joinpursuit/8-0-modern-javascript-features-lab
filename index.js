@@ -40,18 +40,18 @@ const organizeMoonsByPlanet = ( moons ) => {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
-  let closest = moons[0];
-  const rest = moons.slice(1);
+const getClosestToPlanet = (moons) => {
+
+  let [closest, ...rest] = moons;
 
   for (let moon of rest) {
-    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
+    if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm)
       closest = moon;
-    }
   }
 
   return closest.name;
-}
+
+} // ends getClosestToPlanet()
 
 /*
   To update this function, you should:
