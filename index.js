@@ -55,7 +55,7 @@ const getClosestToPlanet = moons => {
 
   You should not need to make any other changes to the code.
 */
-const createMoon = (name, planet, distanceFromPlanetInKm = 'Unknown') => {
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return 'Name and planet are required.'
   }
