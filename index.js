@@ -17,9 +17,8 @@ const moons = [
 const organizeMoonsByPlanet = (moons)  => {
   const result = {};
   for (let moon of moons) {
-    let {name, planet} = moon
-    // const name = moon.name;
-    // const planet = moon.planet;
+    const {name, planet} = moon
+
     if (result[planet]) {
       result[planet].push(name);
     } else {
