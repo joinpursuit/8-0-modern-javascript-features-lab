@@ -14,11 +14,12 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-function organizeMoonsByPlanet(moons) {
+const organizeMoonsByPlanet = (moons) => {
   const result = {};
   for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
+    const{ name, planet } = moon /* It's important to note that the names of the variables must be the same as the keys inside of the object. While an error will not be thrown if you create a 
+    different variable name, it will return undefined. Look at index.test.js for */
+    
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -35,9 +36,11 @@ function organizeMoonsByPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function getClosestToPlanet(moons) {
-  let closest = moons[0];
-  const rest = moons.slice(1);
+const getClosestToPlanet= (moons)=> {
+  
+  
+  let [closest, ...rest] = moons
+  
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
@@ -56,18 +59,18 @@ function getClosestToPlanet(moons) {
 
   You should not need to make any other changes to the code.
 */
-function createMoon(name, planet, distanceFromPlanetInKm) {
+/* use const when creating an arrow function>>*/const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown"/* to set a defalut parameter value you set the parmater 'equal' to a value. example distanceFromPlanetinKm= 'Unk */)=> {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
 
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
-
-  return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
-  };
+ const newObj = {
+  name,
+  planet,
+  distanceFromPlanetInKm,
+ }
+  return newObj
 }
 
 module.exports = {
